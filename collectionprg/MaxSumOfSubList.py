@@ -4,17 +4,18 @@ end =0
 k = 3
 max_sum = 0
 current_sum =0
-# while end < len(lst):
-#     if end-start == 2:
-#         print(lst[start:end+1])
-#         current_sum = sum(lst[start:end+1])
-#         if max_sum < current_sum:
-#             max_sum = current_sum
-#         current_sum = 0
-#         start = start + 1
-#     end = end + 1
-# print(max_sum)
+# Brute Force
+while end < len(lst):
+    if end-start == 2:
+        print(lst[start:end+1])
+        current_sum = sum(lst[start:end+1])
+        max_sum = max(max_sum, current_sum)
+        current_sum = 0
+        start = start + 1
+    end = end + 1
+print(max_sum)
 
+# Optimized way
 while end < len(lst):
     current_sum = current_sum + lst[end]
     if (end - start) + 1 == k:
@@ -24,5 +25,5 @@ while end < len(lst):
         start += 1
         end += 1
     else:
-        end +=  1
+        end += 1
 print(max_sum)
