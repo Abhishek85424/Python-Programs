@@ -18,9 +18,10 @@ while start < len(st):
 if len(digits) != 0 and len(chars) != 0:
     print(chars * int(digits))
 
-
-# digits = re.findall("\\d+", st)
-# character = re.findall("[a-z|A-Z]+", st)
-# dict = dict(zip(character,digits))
-# for key in dict.keys():
-#     print(key*int(dict[key]))
+# Using Regular Expression
+import re
+digits = re.findall("\\d+", st)
+character = re.findall("[a-z|A-Z]+", st)
+dict = dict(zip(character,digits))
+for key in dict.keys():
+    print(key*int(dict[key]))

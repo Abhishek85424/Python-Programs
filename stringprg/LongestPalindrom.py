@@ -1,28 +1,23 @@
-st= 'aaaabbaa'
-lst = []
-for index in range(len(st)):
-    cols = []
-    for j_index in range(len(st)):
-        if j_index >= index:
-            if index == j_index:
-                cols.append(j_index)
-                cols[j_index] = 1
-            else:
-                if st[index] == st[j_index]:
-                    cols.append(j_index)
-                    cols[j_index] = 1
-                else:
-                    cols.append(j_index)
-                    cols[j_index] = 0
-        else:
-            cols.append(j_index)
-            cols[j_index] = 0
-    lst.append(cols)
-    print(cols)
+#5. Longest Palindromic Substring
 
-    for index in range(len(st)):
-        for j_index in range(len(st)):
-            if lst[index][index] == lst[index][j_index] and lst[index-1] == lst[j_index-1]:
-                lst[index][j_index] =1
-
-# print(lst)
+s = "cbbd"
+res = ''
+max_len_pal = 0
+for i in range(len(s)):
+    # Odd Length Palindrom
+    l,r= i,i
+    while l >= 0 and r < len(s) and s[l] == s[r]:
+        if (r-l+1) > max_len_pal:
+            res = s[l:r+1]
+            max_len_pal = r-l+1
+        l -= 1
+        r += 1
+    # Even Length
+    l, r = i, i+1
+    while l >=0 and r < len(s) and s[l] == s[r]:
+        if (r-l+1) > max_len_pal:
+            res = s[l:r+1]
+            max_len_pal = r-l+1
+        l -= 1
+        r += 1
+print(res, max_len_pal)

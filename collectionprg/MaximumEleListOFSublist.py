@@ -1,16 +1,16 @@
-nums = [1,-1]
+nums = [12,-1,-7,8,-15,30,16,28]
 
-start = 0
-end = 0
-max_elem = float('-inf')
-k = 1
-lst = []
-while end < len(nums):
-    max_elem = max(max_elem, nums[end])
-    if (end - start) + 1 == k:
-        lst.append(max_elem)
-        start += 1
-        max_elem = float('-inf')
-    end += 1
-print(lst)
-print(max_elem)
+start, end, i = 0,len(nums)-1,0
+k = 4
+max_item = float('-inf')
+while start < end:
+    max_item = max(max_item, nums[start])
+    if i == k:
+        print(max_item)
+        i = 0
+        max_item = float('-inf')
+    i += 1
+    start += 1
+
+max_item = max(max_item, nums[start])
+print(max_item)

@@ -16,3 +16,4 @@ while start < len(lst)-1:
         end = start+1
 final_lst.extend(non_anagram)
 print(final_lst)
+print(non_anagram)

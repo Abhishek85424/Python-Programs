@@ -1,20 +1,9 @@
 lst = [1,2,3,1,4,2,1,7,2,1]
-# startIndex = 0
-# endIndex= len(lst)
-# for index in range(len(lst)-1):
-#     if lst[index+1] < lst[index]:
-#         endIndex = index+1
-#         print(lst[startIndex:endIndex])
-#         startIndex = endIndex
-# if endIndex != len(lst):
-#     print(lst[startIndex:len(lst)])
-# print(startIndex, endIndex)
-
-# Optimized way
-i, j = 0, 1
-while j < len(lst):
-    if lst[j] < lst[j - 1]:
-        print(lst[i:j])
-        i = j
-    j += 1
-print(lst[i:j])
+lst = [1,2,3,1,4,2,1,7,2,3]
+sublist = []
+for i in range(len(lst)):
+    sublist.append(lst[i])
+    if i < len(lst) -1 and lst[i+1] < lst[i]:
+        print(sublist)
+        sublist = []
+print(sublist)

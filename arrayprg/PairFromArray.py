@@ -5,8 +5,8 @@ for item in lst:
     if len(item) < 2 or item[len(item)-1] == 0 or None in item:
         continue
     else:
-        last_item = item[len(item)-1]
-        second_last_item = item[len(item)-2]
+        last_item = item[-1]
+        second_last_item = item[-2]
         if int(second_last_item/last_item) == given_number:
             result.append(item)
 

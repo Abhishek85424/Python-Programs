@@ -31,4 +31,4 @@ for index in range(total_ip):
             validateIpV6(item) for item in current_ip.split(':')):
         print('IPv6')
     else:
-        print('Neither')
+        print('Invalid IP')

@@ -1,5 +1,5 @@
-s =  'c3[abc]c4[ab]d'
-i= 0
+s = 'c3[abc]c4[ab]d'
+i = 0
 digit = ''
 str_to_append = ''
 final_str = ''
@@ -15,7 +15,7 @@ while i < len(s):
         str_to_append += s[i]
     else:
         append_str_found = False
-        final_str += str_to_append*int(digit)
+        final_str += str_to_append * int(digit)
         str_to_append = ''
         digit = ''
     i += 1
